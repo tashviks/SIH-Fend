@@ -8,7 +8,6 @@ import "react-toastify/dist/ReactToastify.css";
 import { registerRoute } from "../utils/APIRoutes";
 
 export default function Register() {
-
     const navigate = useNavigate();
     const toastOptions = {
       position: "bottom-right",
@@ -126,7 +125,6 @@ export default function Register() {
 
     document.body.style.margin = "0px 0px 0px 0px";
     const FormContainer = styled.div`
-      background-image:url(${bg});
       height: 45rem;
       width: 100%;
       max-width:100%;
