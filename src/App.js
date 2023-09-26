@@ -1,10 +1,9 @@
-import './App.css';
-import {BrowserRouter as Router, Routes, Route, Link} from "react-router-dom";
-import Login from "./pages/Login";
-import Register from "./pages/Register";
-import Project from "./pages/Project";
-import AddProject from "./pages/AddProject";
-import Main from "./pages/Main";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import Login from "./components/Login/Login";
+import Register from "./components/Register/Register";
+import Project from "./components/Project/Project";
+import AddProject from "./components/AddProject/AddProject";
+import Main from "./components/Main/Main";
 
 function App() {
   return (

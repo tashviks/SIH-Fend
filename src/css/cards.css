@@ -1,0 +1,33 @@
+/* card.css */
+.parent-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 10px; 
+    margin-left: 150px;
+    max-width: 1400px;
+    width: 100%;
+}
+
+button.more {
+    background-color: #007bff; /* Change to your desired button background color */
+    color: #fff; /* Change to your desired text color */
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 25px;
+    margin-top: 10px; /* Adjust margin as needed */
+    transition: background-color 0.3s ease;
+}
+
+button.more:hover {
+    background-color: #0056b3; /* Change to the hover background color you prefer */
+}
+
