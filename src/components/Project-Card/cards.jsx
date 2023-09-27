@@ -14,8 +14,6 @@ const Cards = ({ids = [["abc" , img1, img2, img3,img4,img5,img6,img7,img8],["bcd
   const defaultImages = [img1, img2, img3,img4,img5,img6,img7,img8];
   const [visibleCards, setVisibleCards] = useState(1);
   const [cards, setCards] = useState(defaultImages);
-  const [newCard, setNewCard] = useState(null);
-  const i = 2;
   const showMoreCards = () => {
     setVisibleCards(ids.length - 2);
   };
@@ -23,8 +21,7 @@ const Cards = ({ids = [["abc" , img1, img2, img3,img4,img5,img6,img7,img8],["bcd
   const addCard = () => {
     const randomImageIndex = Math.floor(Math.random() * defaultImages.length);
     const newCardImage = defaultImages[randomImageIndex];
-    i += 1;
-    if (visibleCards <= 4 || visibleCards % 4 != 0) {
+    if (visibleCards <= 4 || visibleCards % 4 !== 0) {
       // If there are less than 4 visible cards, add the new card and update visibleCards
       setCards([...cards, newCardImage]);
       setVisibleCards(visibleCards + 1);
