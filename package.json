@@ -8,7 +8,6 @@
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.5.0",
     "form-container": "^0.2.8",
-    "framer-motion": "^10.16.4",
     "mdb-react-ui-kit": "^6.3.0",
     "multiselect-react-dropdown": "^2.0.25",
     "react": "^18.2.0",

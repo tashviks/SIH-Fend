@@ -3,13 +3,13 @@
     width: 50px;
     flex-basis: 20%;
   
-    border: 1px solid rgb(198, 179, 153);
+    border: 1px solid #A084E8;
     margin: 10px;
     margin-top:10px;
     border-radius: 12px;
   }
   .project-card:hover {
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2); 
+    box-shadow: 0px 10px 20px #A084E8; 
   }
   .tag {
     padding: 4px 8px;
@@ -31,7 +31,7 @@
     margin-bottom: 0px;
     margin-top: 1px;
   }
-  .project-card button {
+  .card__details button {
     border: none;
     padding: 12px 24px;
     border-radius: 50px;
@@ -46,7 +46,7 @@
   .card__details {
     padding: 16px 8px 16px 16px;
   }
-  .project-card button:focus,.project-card 
+  .card__details button:focus,.card__details 
   button:hover {
     background-color: #6F61C0;
     color: aliceblue;
