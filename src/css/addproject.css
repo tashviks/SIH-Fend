@@ -1,0 +1,48 @@
+.form-container {
+    border: 1px solid #ccc; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    padding: 20px; 
+    max-width: 600px; 
+    margin: 0 auto; 
+    background-color: #fff; 
+    border-radius: 3%;
+  }
+  
+  
+  label {
+    display: block; 
+    margin-bottom: 8px; 
+  }
+
+  
+  .text-input,
+  input[type="file"],
+  textarea,
+  .form-container button,
+  .checkbox-label {
+    display: block; 
+    margin-bottom: 16px; 
+    width: 100%; 
+    padding: 8px; 
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+  }
+
+  .text-input,
+  input[type="file"],
+  textarea {
+    width: 389px;
+  }
+  
+  
+  #addproject {
+    background-color: #007bff; 
+    color: #fff; 
+    border: none; 
+    cursor: pointer; 
+  }
+  
+  #addproject:hover {
+    background-color: #0056b3; 
+  }
+  
