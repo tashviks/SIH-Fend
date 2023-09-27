@@ -1,7 +1,8 @@
 .topbarContainer {
     height: 50px;
     width: 100%;
-    background-color: #1877f2;
+    background-color: rgba(255,255,255,.1);
+    backdrop-filter: blur(3px);
     display: flex;
     align-items: center;
     position: sticky;
@@ -14,7 +15,7 @@
 }
 .topbarLeft {
     flex: 3;
-    color: white;
+    color: #C5DFF8;
 }
 .blk{
     color: black;
@@ -38,7 +39,7 @@
     flex-wrap: wrap;
     justify-content: space-around;
     gap: 150px;
-    color: white;
+    color: #C5DFF8;
     /* border: 1px solid black; */
 }
   

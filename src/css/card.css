@@ -1,5 +1,5 @@
 .project-card {
-    background-color: white;
+    background-color: aliceblue;
     width: 50px;
     flex-basis: 20%;
   
@@ -13,11 +13,11 @@
   }
   .tag {
     padding: 4px 8px;
-    background-color: #FEEBC8;
+    background-color: #A084E8;
     border-radius: 50px;
     font-size: 12px;
     font-weight: 600;
-    color:#9C4221;
+    color:aliceblue;
   }
   .name {
     font-size: 24px;
@@ -28,15 +28,16 @@
     font-size: 16px;
     color: #000000;
     font-weight: bold;
-    
+    margin-bottom: 0px;
+    margin-top: 1px;
   }
-  button {
+  .project-card button {
     border: none;
     padding: 12px 24px;
     border-radius: 50px;
     font-weight: 600;
-    color: #9C4221;
-    background-color: #FEEBC8;
+    color: aliceblue;
+    background-color: #A084E8;
     margin: 0 auto;
     display: block;
     cursor: pointer;
@@ -45,10 +46,10 @@
   .card__details {
     padding: 16px 8px 16px 16px;
   }
-  button:focus,
+  .project-card button:focus,.project-card 
   button:hover {
-    background-color: #9C4221;
-    color: white;
+    background-color: #6F61C0;
+    color: aliceblue;
   }
   
   .slideshow-container {
@@ -90,4 +91,29 @@
             
           }
 
-          
+#names{
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+#teamdiv{
+  text-overflow: ellipsis;
+white-space: nowrap;
+-moz-white-space: nowrap;
+overflow: hidden;
+}
+
+#mentordiv{
+  text-align:end;
+  text-overflow: ellipsis;
+white-space: nowrap;
+-moz-white-space: nowrap;
+overflow: hidden;
+}
+
+#cardtags{
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+}

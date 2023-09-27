@@ -109,7 +109,7 @@ const canvas = () => {
                       "distance": 200
                   },
                   "push": {
-                      "particles_nb": 2
+                      "particles_nb": 3
                   },
                   "remove": {
                       "particles_nb": 2
@@ -118,7 +118,7 @@ const canvas = () => {
           },
           "retina_detect": true,
           "background": {
-              "color": "#3808F7",
+              "color": "#6F61C0",
               "image": "",
               "position": "50% 50%",
               "repeat": "no-repeat",

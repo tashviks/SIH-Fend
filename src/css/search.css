@@ -1,0 +1,69 @@
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 450px;
+}
+
+.search{
+    border: none;
+    background-color: white;
+}
+
+.relative {
+    position: relative
+}
+
+.p-3 {
+    padding: .75rem
+}
+
+
+.border {
+    border-width: 1px
+}
+
+.rounded-md{
+    border-radius: .375rem;
+}
+
+.rounded-lg {
+    border-radius: .5rem
+}
+
+.w-full {
+    width: 100%
+}
+
+.max-w-lg {
+    max-width: 32rem
+}
+
+.max-w-lg {
+    max-width: 32rem
+}
+
+.pr-10 {
+    padding-right: 2.5rem
+}
+
+.absolute {
+    position: absolute
+}
+
+.right-6 {
+    right: 1.5rem
+}
+
+.top-6 {
+    top: 1.8rem
+}
+
+.w-6 {
+    width: 1.5rem
+}
+
+.h-6 {
+    height: 1.5rem
+}

@@ -5,7 +5,7 @@ const universityCard = () => {
     return(
         <>
         <div className='university-card'>
-            <h2>University Name</h2>
+            <h3>University Name</h3>
             <Cards/>
         </div>
         </>

@@ -16,7 +16,7 @@
 }
 
 button.more {
-    background-color: #007bff; /* Change to your desired button background color */
+    background-color: #A084E8; /* Change to your desired button background color */
     color: #fff; /* Change to your desired text color */
     border: none;
     padding: 10px 20px;
@@ -28,6 +28,6 @@ button.more {
 }
 
 button.more:hover {
-    background-color: #0056b3; /* Change to the hover background color you prefer */
+    background-color: #6F61C0; /* Change to the hover background color you prefer */
 }
 

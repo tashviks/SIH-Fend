@@ -1,20 +1,14 @@
 import '../../css/card.css';
 
-const Card = ({img})=> {
-    let slideIndex = 1;
+const Card = ({cardId , teamLeader = "Team Lead" , teamMembers = ["M1" , "M2" , "M3"] , mentor = "Mentor", projectTitle = "Project Title" , projectDisc , selectedTags = ["HTML" , "CSS" , "JS" , "react"] , img})=> {
+    let slideIndex = 0;
 
-    let showSlides = function (n) {
-        let slides = document.querySelectorAll(".slideshow-img");
-        if (n > slides.length) { slideIndex = 1; }
-        if (n < 1) { slideIndex = slides.length; }
-        for (let i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";
-        }
-        slides[slideIndex - 1].style.display = "block";
-    }
-
-    let plusSlides = function (n) {
-        showSlides(slideIndex += n);
+    let plusSlides = function (n , id) {
+        slideIndex += n
+        let slides = document.querySelector(`#${id}`);
+        if(slideIndex >= img.length){slideIndex = 0;}
+        if(slideIndex < 0){slideIndex = img.length-1;}
+        slides.src = img[slideIndex];
     }
 
     return (
@@ -22,35 +16,37 @@ const Card = ({img})=> {
         <div class="project-card">
             <div class="slideshow-container">
             
-                <img class="slideshow-img" src={img[0]} alt="Lago di Braies"></img>
-                <img class="slideshow-img" src={img[1]} alt="Another Image" style={{display:"none"}}></img>
-                <img class="slideshow-img" src={img[2]} alt="Yet Another Image" style={{display:"none"}}></img>
+                <img class="slideshow-img" id={cardId} src={img[0]} alt="this is a image"></img>
         
-        
-                <a class="prev" onClick={() => plusSlides(-1)}></a>
-                <a class="next" onClick={() => plusSlides(1)}></a>
+                <a class="prev" onClick={() => {plusSlides(-1 , cardId)}}></a>
+                <a class="next" onClick={() => {plusSlides(1 , cardId)}}></a>
             </div>
         
             <div class="card__details">
+                
+                <div id="cardtags">
+                {selectedTags.slice(0,4).map((val) => {
+                    return <span class="tag">{val}</span>
+                })}
+                </div>
     
-    
-                <span class="tag">HTML</span>
-        
-                <span class="tag">CSS</span>
-                <span class="tag">Java</span>
-    
-    
-                <div class="name">Slideshow Project</div>
-    
-                <p>TEAM MEMBERS: </p>
-                <ul id="team-members">
-                    <li>Name 1</li>
-                    <li>Name 2</li>
-                </ul>
-                <p> MENTORS: </p>
-                <ul id="faculty-members">
-                    <li>Faculty Name</li>
-                </ul>
+                <div class="name">{projectTitle}</div>
+                <div id="names">
+                    <div id="teamdiv">
+                        <p>{teamLeader}</p>
+                        <ul id="team-members">
+                            {teamMembers.slice(0,3).map((val)=>{
+                                return <li>{val}</li>
+                            })}
+                        </ul>
+                    </div>
+                    <div id="mentordiv">   
+                        <p> MENTOR: </p>
+                        <ul id="faculty-members">
+                            <li>{mentor}</li>
+                        </ul>
+                    </div>
+                </div>
                 <button onClick="">Read more</button>
             </div>
         </div>
