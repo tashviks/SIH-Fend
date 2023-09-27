@@ -3,13 +3,13 @@ import Unicards from '../Project-Card/university-Card.jsx';
 import Canvas from '../Canvas/canvas.jsx';
 import Tags from '../Main/Tags.jsx';
 import '../../css/app.css';
-import Topbar from '../Header/topbar.jsx';
+import TopbarLogin from '../Header/topbarLogin.jsx';
 import Search from '../Header/searchbar.jsx';
 
 function Main() {
     return (
         <div>
-            <Topbar/>
+            <TopbarLogin/>
             {/* <Tags/> */}
             <Canvas/>
             <Search/>

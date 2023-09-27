@@ -11,6 +11,11 @@
     background-color: white;
 }
 
+.white{
+    color: white;
+    font-weight: bold;
+}
+
 .relative {
     position: relative
 }
