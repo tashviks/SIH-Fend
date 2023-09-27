@@ -33,7 +33,7 @@ const Card = ({cardId , teamLeader = "Team Lead" , teamMembers = ["M1" , "M2" , 
                 <div class="name">{projectTitle}</div>
                 <div id="names">
                     <div id="teamdiv">
-                        <p>{teamLeader}</p>
+                        <p className='bold'>{teamLeader}</p>
                         <ul id="team-members">
                             {teamMembers.slice(0,3).map((val)=>{
                                 return <li>{val}</li>
@@ -41,7 +41,7 @@ const Card = ({cardId , teamLeader = "Team Lead" , teamMembers = ["M1" , "M2" , 
                         </ul>
                     </div>
                     <div id="mentordiv">   
-                        <p> MENTOR: </p>
+                        <p className='bold'> MENTOR: </p>
                         <ul id="faculty-members">
                             <li>{mentor}</li>
                         </ul>
