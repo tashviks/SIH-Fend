@@ -111,7 +111,7 @@ const handleSubmit = async (event) => {
                     <loginComponent.Overlay signinIn={univ}>
         
                     <loginComponent.LeftOverlayPanel signinIn={univ}>
-                        <loginComponent.Title>Welcome Back!</loginComponent.Title>
+                        <loginComponent.Title>ProjectiON!</loginComponent.Title>
                         <loginComponent.Paragraph>
                             Click here for University Sign in
                         </loginComponent.Paragraph>
@@ -121,7 +121,7 @@ const handleSubmit = async (event) => {
                             </loginComponent.LeftOverlayPanel>
             
                             <loginComponent.RightOverlayPanel signinIn={univ}>
-                            <loginComponent.Title>Hello, Friend!</loginComponent.Title>
+                            <loginComponent.Title>ProjectiON!</loginComponent.Title>
                         <loginComponent.Paragraph>
                             Click here for Student Sign in
                         </loginComponent.Paragraph>
