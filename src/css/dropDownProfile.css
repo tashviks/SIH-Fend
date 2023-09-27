@@ -76,7 +76,7 @@ a{
   }
   
   
-  h3{
+  #username{
     width: 100%;
     text-align: center;
     font-size: 18px;
@@ -87,7 +87,7 @@ a{
     line-height: 1.2rem;
   }
   
-  h3 span{
+  #username span{
     font-size: 14px;
     color: var(--secondary-text-color);
     font-weight: 400;
