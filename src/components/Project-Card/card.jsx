@@ -1,6 +1,6 @@
 import '../../css/card.css';
 
-const Card = ({cardId , teamLeader = "Team Lead" , teamMembers = ["M1" , "M2" , "M3"] , mentor = "Mentor", projectTitle = "Project Title" , projectDisc , selectedTags = ["HTML" , "CSS" , "JS" , "react"] , img})=> {
+const Card = ({cardId , teamLeader = "Team Lead" , teamMembers = ["M1" , "M2" , "M3"] , mentor = "Mentor", projectTitle = "Project Title" , projectDisc , selectedTags = ["HTML" , "React" , "CSS" , "JS"] , img})=> {
     let slideIndex = 0;
 
     let plusSlides = function (n , id) {
@@ -18,8 +18,8 @@ const Card = ({cardId , teamLeader = "Team Lead" , teamMembers = ["M1" , "M2" , 
             
                 <img class="slideshow-img" id={cardId} src={img[0]} alt="this is a image"></img>
         
-                <a class="prev" onClick={() => {plusSlides(-1 , cardId)}}></a>
-                <a class="next" onClick={() => {plusSlides(1 , cardId)}}></a>
+                <button class="prev" onClick={() => {plusSlides(-1 , cardId)}}>&#10094;</button>
+                <button class="next" onClick={() => {plusSlides(1 , cardId)}}>&#10095;</button>
             </div>
         
             <div class="card__details">
