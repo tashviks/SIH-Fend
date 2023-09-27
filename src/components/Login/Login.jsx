@@ -1,10 +1,11 @@
-import React from "react";
+import React , {useState}from "react";
 import * as loginComponent from './loginComponent';
 import '../../css/login.css';
 
 
 function Login() {
-    const [signIn, toggle] = React.useState(true);
+    const [signIn, toggle] = useState(true);
+    console.log(signIn);
         return(
             <div className="loginpage">
             <loginComponent.Container>
