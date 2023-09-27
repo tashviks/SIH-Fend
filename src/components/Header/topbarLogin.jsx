@@ -1,8 +1,11 @@
 import "../../css/topbar.css";
 import {useState} from 'react';
+import { useNavigate} from "react-router-dom";
 
-export default function Topbar() {
+
+const Topbar = () => {
     const [topbarContainer,settopbarContainer] = useState(false);
+    const navigate = useNavigate();
     const changeBackground=()=>{
         if(window.scrollY >= 80){
             settopbarContainer(true);
@@ -27,7 +30,9 @@ export default function Topbar() {
           <span className={topbarContainer ? 'topbarLink blk':'topbarLink'}>Contact Us</span>
         </div>
       </div>
-      <button class="log">Login</button>
+      <button class="log" onClick={()=>{navigate("/login")}}>Login</button>
     </div>
   );
 }
+
+export default Topbar;

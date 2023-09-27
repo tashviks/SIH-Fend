@@ -1,38 +1,116 @@
-import React , {useState}from "react";
+import React , {useState , useEffect} from "react";
 import * as loginComponent from './loginComponent';
 import '../../css/login.css';
+import axios from "axios";
+import { useNavigate , Link } from "react-router-dom";
+import { ToastContainer , toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
+import {loginRoute} from '../../utils/APIRoutes';
 
 
 function Login() {
-    const [signIn, toggle] = useState(true);
-    console.log(signIn);
+    const [univ, toggle] = useState(true);
+    const navigate = useNavigate();
+    const [values , setValues] = useState({emailU: "" , passwordU: "" , emailS: "" , passwordS: ""});
+    const toastOptions = {
+        position: "bottom-right",
+        autoClose: 8000,
+        pauseOnHover: true,
+        draggable: true,
+        theme: "dark",
+    };
+    useEffect(() => {
+        if (localStorage.getItem("key")) {
+          navigate("/");
+        }
+      }, []);
+
+      const handleChange = (event) => {
+        setValues({ ...values, [event.target.name]: event.target.value });
+      };
+
+// THIS IS A FUNCTION FOR HANDLE VALIDATION
+const validateForm = () => {
+    const { emailU, passwordU , emailS , passwordS } = values;
+    if(univ){
+        if (emailU === "") {
+          toast.error("Email and Password is required.", toastOptions);
+          return false;
+        } else if (passwordU === "") {
+          toast.error("Email and Password is required.", toastOptions);
+          return false;
+        }
+    }else{
+        if (emailS === "") {
+          toast.error("Email and Password is required.", toastOptions);
+          return false;
+        } else if (passwordS === "") {
+          toast.error("Email and Password is required.", toastOptions);
+          return false;
+        }
+        
+    }
+
+    return true;
+  };
+// THIS IS A FUNCTION FOR HANDLE SUBMIT
+const handleSubmit = async (event) => {
+    event.preventDefault();
+    if (validateForm()) {
+        const { emailU, passwordU , emailS , passwordS } = values;
+        var email="" , password="";
+        if(univ){
+            email = emailU;
+            password = passwordU;
+        }else{
+            email = emailS;
+            password = passwordS;
+        }
+      const { data } = await axios.post(loginRoute, {
+        email,
+        password,
+        univ
+      });
+      if (data.status === false) {
+        toast.error(data.msg, toastOptions);
+      }
+      if (data.status === true) {
+        localStorage.setItem(
+          "loginCredentials",
+          JSON.stringify(data.user)
+        );
+        navigate("/");
+      }
+    }
+  };
+
         return(
             <div className="loginpage">
             <loginComponent.Container>
-                <loginComponent.SignUpContainer signinIn={signIn}>
-                    <loginComponent.Form>
+                <loginComponent.SignUpContainer signinIn={univ}>
+                    <loginComponent.Form onSubmit={(e) => handleSubmit(e)}>
                         <loginComponent.Title>Student Sign In</loginComponent.Title>
-                        <loginComponent.Input type='email' placeholder='Email' />
-                        <loginComponent.Input type='password' placeholder='Password' />
+                        <loginComponent.Input onChange={(e) => {handleChange(e)}} name="emailS" type='email' placeholder='Email' />
+                        <loginComponent.Input onChange={(e) => {handleChange(e)}} name="passwordS" type='password' placeholder='Password' />
                         <loginComponent.Anchor href='#'>Forgot your password?</loginComponent.Anchor>
                         <loginComponent.Button>Sign In</loginComponent.Button>
                     </loginComponent.Form>
                 </loginComponent.SignUpContainer>
             
-                <loginComponent.SignInContainer signinIn={signIn}>
-                    <loginComponent.Form>
+                <loginComponent.SignInContainer signinIn={univ}>
+                    <loginComponent.Form onSubmit={(e) => handleSubmit(e)}>
                         <loginComponent.Title>University Sign In</loginComponent.Title>
-                        <loginComponent.Input type='email' placeholder='Email' />
-                        <loginComponent.Input type='password' placeholder='Password' />
+                        <loginComponent.Input onChange={(e) => {handleChange(e)}} name="emailU" type='email' placeholder='Email' />
+                        <loginComponent.Input onChange={(e) => {handleChange(e)}} name="passwordU" type='password' placeholder='Password' />
                         <loginComponent.Anchor href='#'>Forgot your password?</loginComponent.Anchor>
                         <loginComponent.Button>Sign In</loginComponent.Button>
                     </loginComponent.Form>
                 </loginComponent.SignInContainer>
         
-                <loginComponent.OverlayContainer signinIn={signIn}>
-                    <loginComponent.Overlay signinIn={signIn}>
+                <loginComponent.OverlayContainer signinIn={univ}>
+                    <loginComponent.Overlay signinIn={univ}>
         
-                    <loginComponent.LeftOverlayPanel signinIn={signIn}>
+                    <loginComponent.LeftOverlayPanel signinIn={univ}>
                         <loginComponent.Title>Welcome Back!</loginComponent.Title>
                         <loginComponent.Paragraph>
                             Click here for University Sign in
@@ -42,7 +120,7 @@ function Login() {
                             </loginComponent.GhostButton>
                             </loginComponent.LeftOverlayPanel>
             
-                            <loginComponent.RightOverlayPanel signinIn={signIn}>
+                            <loginComponent.RightOverlayPanel signinIn={univ}>
                             <loginComponent.Title>Hello, Friend!</loginComponent.Title>
                         <loginComponent.Paragraph>
                             Click here for Student Sign in
@@ -56,6 +134,7 @@ function Login() {
               </loginComponent.OverlayContainer>
 
           </loginComponent.Container>
+          <ToastContainer/>
             </div>
       )
 }
