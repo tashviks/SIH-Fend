@@ -36,7 +36,7 @@ const DropDownProfile = ()=>{
   
           <div className={open ? 'temp active':'temp inactive'}>
           {/* <div className='temp'> */}
-            <h3>Kaushal Buccha<br/><span>Website Designer</span></h3>
+            <h3 id="username">Kaushal Buccha<br/><span>Website Designer</span></h3>
             <ul style={{padding:'2px'}}>
               <DropdownItem img = {user} text = {"My Profile"}/>
               <DropdownItem img = {settings} text = {"Settings"}/>
