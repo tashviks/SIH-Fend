@@ -1,7 +1,7 @@
 import "../../css/topbar.css";
 import img from '../../assets/img1.jpg';
 import {useState} from 'react';
-// import DropDownProfile from "./DropDownProfile";
+import DropDownProfile from "./DropDownProfile";
 
 export default function Topbar() {
     const [topbarContainer,settopbarContainer] = useState(false);
@@ -29,7 +29,7 @@ export default function Topbar() {
           <span className={topbarContainer ? 'topbarLink blk':'topbarLink'}>Contact Us</span>
         </div>
         <img src={img} alt="not found" className="topbarImg"/>
-        {/* <DropDownProfile/> */}
+        <DropDownProfile />
       </div>
     </div>
   );

@@ -4,8 +4,8 @@ import '../../css/search.css'
 function Search() {
     return (
         <div className="center">
-            <h1><b>Project-iON</b></h1>
-            <p>project your project</p>
+            <h1 className="white"><b>Project-iON</b></h1>
+            <p className="white">project your project</p>
             <div class="relative p-3 border rounded-lg w-full max-w-lg">
                 <form action="/">
 
