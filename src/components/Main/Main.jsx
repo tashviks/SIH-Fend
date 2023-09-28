@@ -12,6 +12,8 @@ function Main() {
     return (
         <div>
             {localStorage.getItem("loginCredentials") !== null ? JSON.parse(localStorage.getItem("loginCredentials")).univ === true ? <TopbarUni /> : <Topbar /> : <TopbarLogin/>}
+            {/* <Topbar /> */}
+            {/* <TopbarUni /> */}
             {/* <Tags/> */}
             <Canvas/>
             <Search/>

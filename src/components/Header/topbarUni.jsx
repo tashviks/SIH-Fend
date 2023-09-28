@@ -2,6 +2,7 @@ import "../../css/topbar.css";
 import img from '../../assets/img1.jpg';
 import {useState} from 'react';
 import DropDownProfile from "./DropDownProfile";
+import DropDownUni from "./DropDownUni";
 import { useNavigate } from "react-router-dom";
 
 export default function Topbar() {
@@ -31,7 +32,7 @@ export default function Topbar() {
           <span className={topbarContainer ? 'topbarLink blk':'topbarLink'}>Contact Us</span>
         </div>
         <img src={img} alt="not found" className="topbarImg"/>
-        <DropDownProfile/>
+        <DropDownUni/>
       </div>
     </div>
   );

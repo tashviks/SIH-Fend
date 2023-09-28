@@ -5,6 +5,8 @@ import Project from "./components/Project/Project";
 import AddProject from "./components/AddProject/AddProject";
 import Main from "./components/Main/Main";
 import Plag from "./components/Plag/Plag";
+import UserProfile from "./components/Profile/UserProfile";
+import UniProfile from "./components/Profile/UniProfile";
 
 
 function App() {
@@ -17,6 +19,8 @@ function App() {
         <Route path="/addproject" element={<AddProject />} />
         <Route path="/project" element={<Project />} />
         <Route path="/plag" element={<Plag />} />
+        <Route path="/userprofile" element={<UserProfile />} />
+        <Route path="/uniprofile" element={<UniProfile />} />
       </Routes>
     </Router>
   );
