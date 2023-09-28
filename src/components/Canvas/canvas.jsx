@@ -16,13 +16,13 @@ const canvas = () => {
         options={{
           "fullScreen": {
               "enable": false,
-              "zIndex": -1
+              "zIndex": -1,
           },
           "particles": {
               "number": {
                   "value": 50,
                   "density": {
-                      "enable": false,
+                      "enable": true,
                       "value_area": 400
                   }
               },
