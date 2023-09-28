@@ -20,7 +20,9 @@ a{
     position: absolute;
     top: 60px;
     right: 10px;
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.2);
+    -webkit-backdrop-filter: blur;
+    backdrop-filter: blur(20px);
     border-radius: var(--border-radius);
     padding: 10px 20px;
     width: 200px;
@@ -55,7 +57,9 @@ a{
     right: 20px;
     height: 20px;
     width: 20px;
-    background: var(--secondary-bg);
+    background-color: rgba(255, 255, 255, 0.2);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
     transform: rotate(45deg);
     border-top: 1px solid black;
     border-left: 1px solid black;

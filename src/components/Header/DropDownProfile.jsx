@@ -5,9 +5,11 @@ import user from '../../assets/user.png';
 import logout from '../../assets/log-out.png';
 import question from '../../assets/question.png';
 import settings from '../../assets/settings.png';
+import { useNavigate } from 'react-router-dom';
+
 const DropDownProfile = ()=>{
     const [open, setOpen] = useState(false);
-
+    const navigate = useNavigate();
     let menuRef = useRef();
   
     useEffect(() => {
@@ -38,10 +40,11 @@ const DropDownProfile = ()=>{
           {/* <div className='temp'> */}
             <h3 id="username">Kaushal Buccha<br/><span>Website Designer</span></h3>
             <ul style={{padding:'2px'}}>
-              <DropdownItem img = {user} text = {"My Profile"}/>
-              <DropdownItem img = {settings} text = {"Settings"}/>
-              <DropdownItem img = {question} text = {"Helps"}/>
-              <DropdownItem img = {logout} text = {"Logout"}/>
+              <DropdownItem img = {user} text = {"My Profile"}route={"/"}/>
+              <DropdownItem img = {logout} text = {"Add Project"} route={"/addproject"}/>
+              <DropdownItem img = {settings} text = {"Settings"}route={"/"}/>
+              <DropdownItem img = {question} text = {"Helps"} route={"/"}/>
+              <DropdownItem img = {logout} text = {"Logout"} route={"/"}/>
             </ul>
           </div>
         </div>
@@ -53,7 +56,7 @@ const DropDownProfile = ()=>{
     return(
       <li className = 'dropdownItem'>
         <img src={props.img} alt=''></img>
-        <a href='/'> {props.text} </a>
+        <a href={props.route}> {props.text} </a>
       </li>
     );
   }

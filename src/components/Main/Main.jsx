@@ -5,11 +5,13 @@ import Tags from '../Main/Tags.jsx';
 import '../../css/app.css';
 import TopbarLogin from '../Header/topbarLogin.jsx';
 import Search from '../Header/searchbar.jsx';
+import TopbarUni from '../Header/topbarUni.jsx';
 
 function Main() {
     return (
         <div>
-            <TopbarLogin/>
+            {/* <TopbarLogin/> */}
+            <TopbarUni/>
             {/* <Tags/> */}
             <Canvas/>
             <Search/>
