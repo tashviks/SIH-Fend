@@ -5,6 +5,7 @@ import user from '../../assets/user.png';
 import logout from '../../assets/log-out.png';
 import question from '../../assets/question.png';
 import plus from '../../assets/plus.png';
+import search from '../../assets/search.png';
 import settings from '../../assets/settings.png';
 import { useNavigate } from 'react-router-dom';
 
@@ -39,10 +40,10 @@ const DropDownProfile = ()=>{
   
           <div className={open ? 'temp active':'temp inactive'}>
           {/* <div className='temp'> */}
-            <h3 id="username">Kaushal Buccha<br/><span>Website Designer</span></h3>
+            <h3 id="username">Lovely Professional University<br/><span>LPU</span></h3>
             <ul style={{padding:'2px'}}>
-              <DropdownItem img = {user} text = {"My Profile"}route={"/userprofile"}/>
-              <DropdownItem img = {plus} text = {"Add Project"} route={"/addproject"}/>
+              <DropdownItem img = {user} text = {"Profile"}route={"/uniprofile"}/>
+              <DropdownItem img = {search} text = {"Check Plag"} route={"/plag"}/>
               <DropdownItem img = {settings} text = {"Settings"}route={"/"}/>
               <DropdownItem img = {question} text = {"Helps"} route={"/"}/>
               <DropdownItem img = {logout} text = {"Logout"} route={"/"}/>
