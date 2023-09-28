@@ -2,5 +2,34 @@
   width: 100%;
   display: flex;
   justify-content: center;
+  background-color: white;
+  border-radius: 3px;
 }
 
+.max-w-lg{
+  width: 700px;
+}
+
+.searchBox{
+  width: 700px;
+}
+
+.multiselect-container{
+  width: 664px;
+}
+
+.optionListContainer{
+  background-color: transparent;
+}
+
+.displayBlock{
+  height: 20px;
+}
+
+.optionContainer{
+  height: 155px;
+}
+
+.displayNone .notFound{
+  height: 50px;
+}

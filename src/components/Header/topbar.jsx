@@ -8,7 +8,7 @@ export default function Topbar() {
     const [topbarContainer,settopbarContainer] = useState(false);
     const navigate = useNavigate();
     const changeBackground=()=>{
-        if(window.scrollY >= 80){
+        if(window.scrollY >= 1000){
             settopbarContainer(true);
         }
         else{
@@ -26,7 +26,7 @@ export default function Topbar() {
       <div className="topbarRight">
         <div className="topbarLinks">
           <span className={topbarContainer ? 'topbarLink blk':'topbarLink'} onClick={() => {navigate("/")}}>Home</span>
-          <span className={topbarContainer ? 'topbarLink blk':'topbarLink'}>Projects</span>
+          <span className={topbarContainer ? 'topbarLink blk':'topbarLink'} href="#uniCard">Projects</span>
           <span className={topbarContainer ? 'topbarLink blk':'topbarLink'}>About Us</span>
           <span className={topbarContainer ? 'topbarLink blk':'topbarLink'}>Contact Us</span>
         </div>

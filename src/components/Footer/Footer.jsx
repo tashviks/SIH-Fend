@@ -5,6 +5,7 @@ const Footer = () => {
     return (
         <>
             <div className="Footer">
+                <a id="Footer"></a>
                 <div className="container">
                     <div className="row">
                         <div className="col-md-6 col-lg-5 col-12 ft-1">
