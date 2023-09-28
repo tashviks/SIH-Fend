@@ -113,8 +113,8 @@ export default function Register() {
           <AnimatedPage>
             <form action="" onSubmit={(event) => handleSubmit(event)}>
               <div className="brand">
-                <h1>APPLICATION</h1>
-                <h1>REGISTER</h1>
+                <h2>Student Register</h2>
+                {/* <h1>REGISTER</h1> */}
 
               </div>
               <input
@@ -142,7 +142,8 @@ export default function Register() {
                 onChange={(e) => handleChange(e)}
               />
               
-              <button type="submit">Create User</button>
+              <button type="submit" style={{background:'transparent',borderRadius:'25px',color: 'whitesmoke',border: '1px solid whitesmoke',
+            width: '150px',height:'35px',fontWeight: 'bold',right:'25px',marginLeft:'35px'}}>Create User</button>
             </form>
             </AnimatedPage>
           </FormContainer>
@@ -162,7 +163,7 @@ export default function Register() {
     justify-content: center;
     gap: 1rem;
     align-items: center;
-    background-color: #FFF;
+    background-color: #F9EBFF;
     .brand {
       display: flex;
       align-items: center;
@@ -171,9 +172,9 @@ export default function Register() {
       img {
         height: 5rem;
       }
-      h1 {
+      h2 {
         color: white;
-        text-transform: uppercase;
+        // text-transform: uppercase;
       }
     }
   
@@ -181,16 +182,16 @@ export default function Register() {
       display: flex;
       flex-direction: column;
       gap: 2rem;
-      background-color: #b993ed;
+      background: radial-gradient(circle at 10% 20%, rgb(111, 111, 219) 0%, rgb(182, 109, 246) 72.4%);
       border-radius: 2rem;
       padding: 3rem 5rem;
-      box-shadow : 10px 5px 5px grey;
+      box-shadow : 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);;
 
     }
     input {
       background-color: transparent;
-      padding: 1rem;
-      border: 0.1rem solid #4e0eff;
+      padding: 0.5rem;
+      border: none;
       border-radius: 0.4rem;
       color: white;
       width: 100%;
@@ -199,75 +200,48 @@ export default function Register() {
         border: 0.1rem solid #997af0;
         outline: none;
       }
-    color : black;
-    background-color: white;
-    .brand {
-      padding-left : 2px;
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      justify-content: center;
-      img {
-        height: 5rem;
-      }
-      h1 {
-        text-transform: uppercase;
-        color : #4e0eff
-      }
+      color : black;
+      background-color: white;
+      .brand {
+        padding-left : 2px;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        justify-content: center;
+        // img {
+        //   height: 5rem;
+        // }
+        h1 {
+          text-transform: uppercase;
+          color : #4e0eff
+        }
     }
   
-    form {
-      display: flex;
-      justify-content : center;
-      align-items : center;
-      flex-direction: column;
-      background: linear-gradient(135deg, #71b7e6, #9b59b6);
-      gap: 2rem;
-      border-radius: 2rem;
-      padding: 3rem 5rem;
-      color : black;
-      border : 1px solid black;
-    }
-    input {
-      background-color: transparent;
-      padding: 1rem;
-      border: 0.1rem solid #4e0eff;
-      border-radius: 0.4rem;
-      color: white;
-      width: 100%;
-      font-size: 1rem;
-      &:focus {
-        border: 0.1rem solid #997af0;
-        outline: none;
-      }
-    }
-    button {
-      background-color: #4e0eff;
-      color: white;
-      padding: 1rem 2rem;
-      border: none;
+    .btnn {
+      border-radius: 25px;
+      background: transparent;
+      color: whitesmoke;
+      border: 1px solid whitesmoke;
+      width: 150px;
+      height: 35px;
       font-weight: bold;
-      cursor: pointer;
-      border-radius: 0.4rem;
-      font-size: 1rem;
-      text-transform: uppercase;
       &:hover {
         background-color: #4e0eff;
       }
     }
-    span {
+    // span {
 
-      color: white;
-      text-transform: uppercase;
-      a {
+    //   color: white;
+    //   text-transform: uppercase;
+    //   a {
 
-      text-transform: uppercase;
-      a{
-        color: #4e0eff;
-        text-decoration: none;
-        font-weight: bold;
-      }
-    }
+    //   text-transform: uppercase;
+    //   a{
+    //     color: #4e0eff;
+    //     text-decoration: none;
+    //     font-weight: bold;
+    //   }
+    // }
 
     ::placeholder{
       color:white;
