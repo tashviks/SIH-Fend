@@ -4,7 +4,7 @@ import broken from "../../assets/broken.jpg"
 import user from '../../assets/user.png';
 import logout from '../../assets/log-out.png';
 import question from '../../assets/question.png';
-import plus from '../../assets/plus.png';
+import add from '../../assets/add.png';
 import settings from '../../assets/settings.png';
 import { useNavigate } from 'react-router-dom';
 
@@ -42,7 +42,7 @@ const DropDownProfile = ()=>{
             <h3 id="username">Kaushal Buccha<br/><span>Website Designer</span></h3>
             <ul style={{padding:'2px'}}>
               <DropdownItem img = {user} text = {"My Profile"}route={"/userprofile"}/>
-              <DropdownItem img = {plus} text = {"Add Project"} route={"/addproject"}/>
+              <DropdownItem img = {add} text = {"Add Project"} route={"/addproject"}/>
               <DropdownItem img = {settings} text = {"Settings"}route={"/"}/>
               <DropdownItem img = {question} text = {"Helps"} route={"/"}/>
               <DropdownItem img = {logout} text = {"Logout"} route={"/"}/>

@@ -4,7 +4,7 @@ import broken from "../../assets/broken.jpg"
 import user from '../../assets/user.png';
 import logout from '../../assets/log-out.png';
 import question from '../../assets/question.png';
-import plus from '../../assets/plus.png';
+import add from '../../assets/add.png';
 import search from '../../assets/search.png';
 import settings from '../../assets/settings.png';
 import { useNavigate } from 'react-router-dom';
