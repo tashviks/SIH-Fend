@@ -15,7 +15,6 @@ const tagsData = [
   'Express.js',
   'MongoDB',
   'SQL',
-  // Add more tags as needed
 ];
 
 const AddProject = () => {
@@ -25,6 +24,8 @@ const AddProject = () => {
   const [projectTitle, setProjectTitle] = useState('');
   const [projectDescription, setProjectDescription] = useState('');
   const [selectedTags, setSelectedTags] = useState([]);
+  const [pdfFIle, setPdfFIle] = useState("");
+  const [rarFile, setRarFile] = useState("");
   const [images, setImages] = useState([]);
 
   const navigate = useNavigate();
@@ -64,6 +65,16 @@ const AddProject = () => {
     const uploadedImages = Array.from(event.target.files);
     setImages(uploadedImages);
   };
+
+  const handlePdfUpload = (event) => {
+    const uploadedPdf = event.target.files[0];
+    setPdfFIle(uploadedPdf);
+  }
+
+  const handleRarUpload = (event) => {
+    const uploadedRar = event.target.files[0];
+    setRarFile(uploadedRar);
+  }
 
   const handleValidation = () => {
     if (teamLeader === "") {
@@ -121,9 +132,13 @@ const AddProject = () => {
     event.preventDefault();
     const userEmail = JSON.parse(localStorage.getItem("loginCredentials")).email;
     for (let i = 0; i < images.length; i++) {
-      images[i] = await convertToBase64(images[i]);
+      setImages(images.map(async (image)=> {return await convertToBase64(image)}))
     }
-    setImages(images);
+    async function convert() {
+      setPdfFIle(await convertToBase64(pdfFIle))
+      setRarFile(await convertToBase64(rarFile))
+    }
+    convert();
     if (handleValidation()) {
       const { data } = await axios.post(addProjectRoute, {
         userEmail,
@@ -133,6 +148,8 @@ const AddProject = () => {
         projectTitle,
         projectDescription,
         selectedTags,
+        pdfFIle,
+        rarFile,
         images,
       });
       if (data.status === false) {
@@ -219,7 +236,15 @@ const AddProject = () => {
         </div>
         <div>
           <label>Upload Images:</label>
-          <input type="file" multiple onChange={handleImageUpload} />
+          <input type="file" multiple accept=".jpg, .png, .jpeg" onChange={handleImageUpload} />
+        </div>
+        <div>
+          <label>Upload rar or zip:</label>
+          <input type="file" accept=".zip, .rar" onChange={handleRarUpload} />
+        </div>
+        <div>
+          <label>Upload pdf of report: </label>
+          <input type="file" accept=".pdf" onChange={handlePdfUpload} />
         </div>
         <div>
           <button type="submit" id="addproject">Submit</button>
