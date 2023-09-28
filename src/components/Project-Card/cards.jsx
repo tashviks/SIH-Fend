@@ -49,9 +49,6 @@ const Cards = ({ids = [["abc" , img1, img2, img3,img4,img5,img6,img7,img8],["bcd
           Show More
         </button>
       )}
-      <button onClick={addCard} className="more">
-        Add Card
-      </button>
     </>
   );
 };

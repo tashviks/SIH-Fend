@@ -8,7 +8,6 @@ import "react-toastify/dist/ReactToastify.css";
 import { registerRoute } from "../../utils/APIRoutes";
 import Canvas from "../Canvas/canvas";
 import {AnimatedPage} from "../../components/Misc/AnimatedPage";
-import avatar from "../../assets/avatar.png";
 
 
 
@@ -74,7 +73,7 @@ export default function Register() {
           }
           if (data.status === true) {
             localStorage.setItem(
-              process.env.REACT_APP_LOCALHOST_KEY,
+              "loginCredentials",
               JSON.stringify(data.user)
             );
             navigate("/");

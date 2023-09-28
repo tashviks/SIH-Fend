@@ -19,14 +19,14 @@ export default function Topbar() {
   return (
     <div className={topbarContainer ? 'topbarContainer active':'topbarContainer'}>
       <div className="topbarLeft">
-        <span className={topbarContainer ? 'logo blk':'logo'}>ProjectiON</span>
+        <span className={topbarContainer ? 'logo blk':'logo'} onClick={() => {navigate("/")}}>ProjectiON</span>
       </div>
       <div className="topbarCenter">
       </div>
       <div className="topbarRight">
         <div className="topbarLinks">
-          <span className={topbarContainer ? 'topbarLink blk':'topbarLink'}>Home</span>
-          <span className={topbarContainer ? 'topbarLink blk':'topbarLink'}>Projects</span>
+          <span className={topbarContainer ? 'topbarLink blk':'topbarLink'} onClick={() => {navigate("/")}}>Home</span>
+          <span className={topbarContainer ? 'topbarLink blk':'topbarLink'} >Projects</span>
           <span className={topbarContainer ? 'topbarLink blk':'topbarLink'} onClick={() => {navigate("/register")}}>Register Student</span>
           <span className={topbarContainer ? 'topbarLink blk':'topbarLink'}>Contact Us</span>
         </div>
