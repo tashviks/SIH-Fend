@@ -24,10 +24,10 @@ const Topbar = () => {
       </div>
       <div className="topbarRight">
         <div className="topbarLinks">
-          <span className={topbarContainer ? 'topbarLink blk':'topbarLink'}>Home</span>
-          <span className={topbarContainer ? 'topbarLink blk':'topbarLink'}>Projects</span>
-          <span className={topbarContainer ? 'topbarLink blk':'topbarLink'}>About Us</span>
-          <span className={topbarContainer ? 'topbarLink blk':'topbarLink'}>Contact Us</span>
+          <span className={topbarContainer ? 'topbarLink blk':'topbarLink'} id="topbarLogin">Home</span>
+          <span className={topbarContainer ? 'topbarLink blk':'topbarLink'} id="topbarLogin">Projects</span>
+          <span className={topbarContainer ? 'topbarLink blk':'topbarLink'} id="topbarLogin">About Us</span>
+          <span className={topbarContainer ? 'topbarLink blk':'topbarLink'} id="topbarLogin">Contact Us</span>
         </div>
       </div>
       <button class="log" onClick={()=>{navigate("/login")}}>Login</button>
