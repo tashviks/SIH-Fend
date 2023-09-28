@@ -8,7 +8,6 @@ import "react-toastify/dist/ReactToastify.css";
 import { registerRoute } from "../../utils/APIRoutes";
 import Canvas from "../Canvas/canvas";
 import {AnimatedPage} from "../../components/Misc/AnimatedPage";
-import avatar from "../../assets/avatar.png";
 
 
 

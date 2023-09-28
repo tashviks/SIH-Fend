@@ -18,13 +18,13 @@ const Topbar = () => {
   return (
     <div className={topbarContainer ? 'topbarContainer active':'topbarContainer'}>
       <div className="topbarLeft">
-        <span className={topbarContainer ? 'logo blk':'logo'}>ProjectiON</span>
+        <span className={topbarContainer ? 'logo blk':'logo'} onClick={() => {navigate("/")}}>ProjectiON</span>
       </div>
       <div className="topbarCenter">
       </div>
       <div className="topbarRight">
         <div className="topbarLinks">
-          <span className={topbarContainer ? 'topbarLink blk':'topbarLink'} id="topbarLogin">Home</span>
+          <span className={topbarContainer ? 'topbarLink blk':'topbarLink'} id="topbarLogin" onClick={() => {navigate("/")}}>Home</span>
           <span className={topbarContainer ? 'topbarLink blk':'topbarLink'} id="topbarLogin">Projects</span>
           <span className={topbarContainer ? 'topbarLink blk':'topbarLink'} id="topbarLogin">About Us</span>
           <span className={topbarContainer ? 'topbarLink blk':'topbarLink'} id="topbarLogin">Contact Us</span>

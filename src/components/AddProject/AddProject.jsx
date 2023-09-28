@@ -218,8 +218,12 @@ const AddProject = () => {
           </div>
         </div>
         <div>
-          <label>Upload Images:</label>
-          <input type="file" multiple onChange={handleImageUpload} />
+          <label>Upload zip or rar:</label>
+          <input type="file" accept=".zip, .rar" onChange={handleImageUpload} />
+        </div>
+        <div>
+          <label>Upload pdf of report:</label>
+          <input type="file" accept=".pdf" onChange={handleImageUpload} />
         </div>
         <div>
           <button type="submit" id="addproject">Submit</button>
