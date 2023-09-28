@@ -18,12 +18,12 @@ const Tags = (props) => {
 
   const handleSelect = (selectedList) => {
     setSelectedTags(selectedList);
-    // console.log(selectedList);
+    console.log(selectedList);
   };
   
   const handleRemove = (selectedList) => {
     setSelectedTags(selectedList);
-    // console.log(selectedList);
+    console.log(selectedList);
   };
 
   return (
@@ -34,7 +34,7 @@ const Tags = (props) => {
               displayValue='Tag'
               onSelect={handleSelect}
               onRemove={handleRemove}
-              placeholder='Add Tags'
+              placeholder='Search'
               className='multiselect-container'
             />
         </div>
