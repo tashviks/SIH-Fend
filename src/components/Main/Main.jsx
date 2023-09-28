@@ -6,12 +6,12 @@ import '../../css/app.css';
 import TopbarLogin from '../Header/topbarLogin.jsx';
 import Search from '../Header/searchbar.jsx';
 import TopbarUni from '../Header/topbarUni.jsx';
+import Topbar from '../Header/topbar.jsx';
 
 function Main() {
     return (
         <div>
-            {/* <TopbarLogin/> */}
-            <TopbarUni/>
+            {localStorage.getItem("loginCredentials") !== null ? JSON.parse(localStorage.getItem("loginCredentials")).univ === true ? <TopbarUni /> : <Topbar /> : <TopbarLogin/>}
             {/* <Tags/> */}
             <Canvas/>
             <Search/>
