@@ -45,7 +45,7 @@ function Plag() {
     return(
         <>
         <PlagContainer>
-        <div style={{color : "red"},{fontSize : "35px"}}>Fake Percentage : </div><div id="output"></div>
+        <div className='result'>Fake Percentage : </div><div id="output"></div>
          <textarea
                 type="text"
                 placeholder="Enter the text to be checked"
@@ -59,8 +59,6 @@ function Plag() {
     );
 
 }
-
-
 
 
 console.log(textX)
@@ -106,6 +104,11 @@ textarea:active{
 }
 
 #output{
+    color : red;
+    font-size : 35px;
+}
+
+.result{
     color : red;
     font-size : 35px;
 }

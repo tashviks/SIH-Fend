@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-background-color: #d5ffe4;
+background-color: #F9EBFF;
 border-radius: 10px;
 box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 position: relative;
@@ -41,7 +41,7 @@ ${props => (props.signinIn !== true ? `transform: translateX(100%);` : null)}
 `;
 
 export const Form = styled.form`
-background-color: #d5ffe4;
+background-color: #F9EBFF;
 display: flex;
 align-items: center;
 justify-content: center;
@@ -67,8 +67,8 @@ width: 100%;
 
 export const Button = styled.button`
    border-radius: 20px;
-   border: 1px solid #2BDFFF;
-   background-color: #2BDFFF;
+   border: 1px solid rgba(119, 44, 232, 0.68);
+   background: rgb(182, 109, 246);
    color: #ffffff;
    font-size: 12px;
    font-weight: bold;
@@ -84,7 +84,7 @@ export const Button = styled.button`
    }
 `;
 export const GhostButton = styled(Button)`
-background-color: transparent;
+background: transparent;
 border-color: #ffffff;
 `;
 
@@ -110,7 +110,8 @@ ${props =>
 export const Overlay = styled.div`
 background: #41FFD4;
 background: -webkit-linear-gradient(to right, #2BDFFF, #41FFD4);
-background: linear-gradient(to right, #2BDFFF, #41FFD4);
+// background: linear-gradient(to right, #2BDFFF, #41FFD4);
+background: radial-gradient(circle at 10% 20%, rgb(111, 111, 219) 0%, rgb(182, 109, 246) 72.4%);
 background-repeat: no-repeat;
 background-size: cover;
 background-position: 0 0;
