@@ -2,14 +2,12 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import styled from "styled-components";
 import { useNavigate, Link } from "react-router-dom";
-import Logo from "../../assets/logo.svg";
+import Logo from "../assets/logo.svg";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { registerRoute } from "../../utils/APIRoutes";
-import Canvas from "../Canvas/canvas";
-import {AnimatedPage} from "../../components/Misc/AnimatedPage";
-import avatar from "../../assets/avatar.png";
-
+import { registerRoute } from "../utils/APIRoutes";
+import {AnimatedPage} from "../components/Misc/AnimatedPage";
+import avatar from "../assets/avatar.png";
 
 
 export default function Register() {
@@ -108,15 +106,11 @@ export default function Register() {
   
     return (
         <>
-        
-       
           <FormContainer>
           <AnimatedPage>
             <form action="" onSubmit={(event) => handleSubmit(event)}>
               <div className="brand">
-                <h1>APPLICATION</h1>
                 <h1>REGISTER</h1>
-
               </div>
               <input
                 type="text"
@@ -150,9 +144,7 @@ export default function Register() {
             </form>
             </AnimatedPage>
           </FormContainer>
-         
           <ToastContainer />
-          
         </>
       );
     }
@@ -166,45 +158,8 @@ export default function Register() {
     justify-content: center;
     gap: 1rem;
     align-items: center;
-    background-color: #FFF;
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      justify-content: center;
-      img {
-        height: 5rem;
-      }
-      h1 {
-        color: white;
-        text-transform: uppercase;
-      }
-    }
-  
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
-      background-color: #b993ed;
-      border-radius: 2rem;
-      padding: 3rem 5rem;
-      box-shadow : 10px 5px 5px grey;
-
-    }
-    input {
-      background-color: transparent;
-      padding: 1rem;
-      border: 0.1rem solid #4e0eff;
-      border-radius: 0.4rem;
-      color: white;
-      width: 100%;
-      font-size: 1rem;
-      &:focus {
-        border: 0.1rem solid #997af0;
-        outline: none;
-      }
     color : black;
-    background-color: white;
+    background: linear-gradient(135deg, #71b7e6, #9b59b6);
     .brand {
       padding-left : 2px;
       display: flex;
@@ -225,7 +180,6 @@ export default function Register() {
       justify-content : center;
       align-items : center;
       flex-direction: column;
-      background: linear-gradient(135deg, #71b7e6, #9b59b6);
       gap: 2rem;
       border-radius: 2rem;
       padding: 3rem 5rem;
@@ -260,11 +214,6 @@ export default function Register() {
       }
     }
     span {
-
-      color: white;
-      text-transform: uppercase;
-      a {
-
       text-transform: uppercase;
       a{
         color: #4e0eff;
@@ -272,11 +221,5 @@ export default function Register() {
         font-weight: bold;
       }
     }
-
-    ::placeholder{
-      color:white;
-    }
-
-
   `;
   
