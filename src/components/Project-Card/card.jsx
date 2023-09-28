@@ -1,4 +1,7 @@
 import '../../css/card.css';
+import Readmore from '../ReadMore/ReadMore';
+import Table from '../ReadMore/table';
+import { useState , useEffect } from 'react';
 
 const Card = ({cardId , teamLeader = "Team Lead" , teamMembers = ["M1" , "M2" , "M3"] , mentor = "Mentor", projectTitle = "Project Title" , projectDisc , selectedTags = ["HTML" , "React" , "CSS" , "JS"] , img})=> {
     let slideIndex = 0;
@@ -10,13 +13,27 @@ const Card = ({cardId , teamLeader = "Team Lead" , teamMembers = ["M1" , "M2" , 
         if(slideIndex < 0){slideIndex = img.length-1;}
         slides.src = img[slideIndex];
     }
+    const random = Math.floor(Math.random() * img.length);
+
+    const [users, setUsers] = useState([])
+    const [loading, setLoading] = useState(false)
+    useEffect(() => {
+        setLoading(true)
+        fetch("https://jsonplaceholder.typicode.com/users")
+            .then(response => response.json())
+            .then(json => setUsers(json))
+            .finally(() => {
+                setLoading(false)
+            })
+    }, [])
+    const [buttonPopup, setButtonPopup] = useState(false);
 
     return (
         <>
         <div class="project-card">
             <div class="slideshow-container">
             
-                <img class="slideshow-img" id={cardId} src={img[0]} alt="this is a image"></img>
+                <img class="slideshow-img" id={cardId} src={img[random]} alt="this is a image"></img>
         
                 <button class="prev" onClick={() => {plusSlides(-1 , cardId)}}>&#10094;</button>
                 <button class="next" onClick={() => {plusSlides(1 , cardId)}}>&#10095;</button>
@@ -47,7 +64,10 @@ const Card = ({cardId , teamLeader = "Team Lead" , teamMembers = ["M1" , "M2" , 
                         </ul>
                     </div>
                 </div>
-                <button onClick="">Read more</button>
+                <button onClick={() => setButtonPopup(true)}>Read More</button>
+                <Readmore trigger={buttonPopup} setTrigger={setButtonPopup}>
+                    <Table/>
+                </Readmore>
             </div>
         </div>
         </>

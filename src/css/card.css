@@ -31,7 +31,7 @@
     margin-bottom: 0px;
     margin-top: 1px;
   }
-  .card__details button {
+  .card__details > button {
     border: none;
     padding: 12px 24px;
     border-radius: 50px;
@@ -46,7 +46,7 @@
   .card__details {
     padding: 16px 8px 16px 16px;
   }
-  .card__details button:focus,.card__details 
+  .card__details > button:focus,.card__details > 
   button:hover {
     background-color: #6F61C0;
     color: aliceblue;

@@ -13,10 +13,10 @@ function Main() {
             {localStorage.getItem("loginCredentials") !== null ? JSON.parse(localStorage.getItem("loginCredentials")).univ === true ? <TopbarUni /> : <Topbar /> : <TopbarLogin/>}
             <Canvas/>
             <Search/>
-            <Unicards/>
+            <Unicards uniname={"University 1"}/>
             <br/>
             <br/>
-            {/* <Unicards/> */}
+            <Unicards uniname={"University 2"}/>
             <Footer/>
         </div>
     );
