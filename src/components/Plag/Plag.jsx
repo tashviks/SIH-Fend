@@ -30,19 +30,19 @@ function Plag() {
         method: 'POST',
         url: 'https://plagiarism-checker-and-auto-citation-generator-multi-lingual.p.rapidapi.com/plagiarism',
         headers: {
-          'content-type': 'application/json',
-          'X-RapidAPI-Key': 'f320d4c375msh37891c92badc65dp1e0809jsn28485d290966',
-          'X-RapidAPI-Host': 'plagiarism-checker-and-auto-citation-generator-multi-lingual.p.rapidapi.com'
+            'content-type': 'application/json',
+            'X-RapidAPI-Key': 'f320d4c375msh37891c92badc65dp1e0809jsn28485d290966',
+            'X-RapidAPI-Host': 'plagiarism-checker-and-auto-citation-generator-multi-lingual.p.rapidapi.com'
         },
         data: {
-          text: message ,
-          language: 'en',
-          includeCitations: false,
-          scrapeSources: false
+            text: message,
+            language: 'en',
+            includeCitations: false,
+            scrapeSources: false
         }
-      };
+    };
     const handleChange = (event) => {
-      setMessage(event.target.value);
+        setMessage(event.target.value);
     };
     const handleClick = async () => {
         try {
@@ -52,9 +52,9 @@ function Plag() {
             const jsonstring = JSON.stringify(json);
             const obj = JSON.parse(jsonstring);
             document.getElementById('output').innerHTML = obj.fakePercentage;
-        } catch (error){
+        } catch (error) {
             console.error(error);
-            
+
         }
 
         try {
@@ -64,30 +64,47 @@ function Plag() {
             const jsonstring = JSON.stringify(json);
             const obj = JSON.parse(jsonstring);
             document.getElementById('output-1').innerHTML = obj.percentPlagiarism;
-            document.getElementById('output-2').innerHTML = JSON.stringify(obj.sources);
-        } 
+            var i = 1;
+            json.sources.forEach(function(source) {
+                var urlElement = document.createElement("a");
+                urlElement.href = source.url;
+                urlElement.target = "_blank";
+                urlElement.textContent = `Source ${i}`;
+                i+=1;
+                document.getElementById('output-2').appendChild(urlElement);
+            });
+        }
         catch (error) {
             console.error(error);
         }
         return;
     }
-    return(
+    return (
         <>
-        <PlagContainer>
-        <div className='plag-con'>
-        <div className='result'>AI Percentage : </div><div id="output"></div>
-        <div className='result'>Plag Percentage : </div><div id="output-1"></div><hr/>
-        </div>
-        <div className='result'>Plag Resources : </div><div id="output-2"></div>
-        
-         <textarea type="text"
-                placeholder="Enter the text to be checked"
-                id = "message"
-                name="message"
-                onChange={handleChange}
-              />
-        <button className='button' onClick={handleClick}>CLick Me</button>
-        </PlagContainer>
+            <PlagContainer>
+                <textarea type="text"
+                    placeholder="Enter the text to be checked"
+                    id="message"
+                    name="message"
+                    onChange={handleChange}
+                />
+                <button className='button' onClick={handleClick}>CLick Me</button>
+                <div className="con">
+                        <div className='card'>
+                            <div className='result'>AI Percentage : </div><div id="output"></div>
+                        </div>
+
+                        <div className="card">
+                            <div className='result'>Plag Percentage : </div><div id="output-1"></div>
+                        </div>
+                   
+
+                    <div className="card">
+                        <div className='result'>Plag Resources : </div><div id="output-2"></div>
+                    </div>
+                </div>
+                <div></div>
+            </PlagContainer>
         </>
     );
 
@@ -95,38 +112,46 @@ function Plag() {
 
 
 console.log(textX)
-
 const PlagContainer = styled.div`
 display:flex;
 flex-direction:column;
 justifiy-content:center;
 align-items:center;
-margin-top : 50px;
+margin-top : 0px;
+padding-top : 50px;
 gap : 2rem;
+background-color:#A084E8;
 
-textarea{
+
+textarea
+{
 align-items:top;
 padding-left: 10px;
 padding-right : 10px;
 width : 1000px;
-max-width : 1000px;
+max-width : 1500px;
 height : 500px;
 position : relative;
 word-break : break-all;
+font-size : 35px;
+border : 1px solid black;
+border-radius : 25px;
+box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 
 textarea:active{
-    background-color : #fff;
+    background-color : black;
+    color : white;
 }
 
-.button{
+button{
     width : 150px;
     height : 50px;
     transition: all ease 2s;
 }
 
-.button::hover{
-    background-color : #afb3ad
+button::hover{
+    background-color : red;
     scale : 1.5;
 }
 
@@ -136,30 +161,58 @@ textarea:active{
     font-weight : bold;
 }
 
-#output #output-1 #output-2{
-    color : red;
-    font-size : 35px;
-}
-
 .result{
+   font-size:30px;
+   font-family:Sans-serif;
+   font-weight : bold;
+}
+div#output{
+    font-size : 100px;
     color : red;
-    font-size : 25px;
-    font-weight : 2px;
+    padding-left : 40%;
+}
+div#output-1{
+    font-size : 100px;
+    color : red;
+    padding-left : 40%;
+}
+#output-2{
+    overflow : scroll;
+    max-width : 750px;
+    max-height : auto;
+    display : flex;
+    flex-direction : column;
+    gap : 2px;
 }
 
-.plag-con{
+.card{
+    padding : 10px;
+    box-shadow : 0 4px 8px 0 rgba(0 , 0 , 0 , 0.2);
+    transition : 0.5s;
+    width : 300px;
+    height : 250px;
     display : flex;
+    flex-direction : column;
+}
+.card:hover{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,1);
+    scale:1.1;
+}
+
+.con{
+    display:flex;
     gap : 2rem;
 }
 
-#output-2{
-    overflow : scroll;
-    max-width : 1200px;
-    max-height : 200px;
-    border : 1px solid black;
+a{
+    border : 2px solid black;
+    font-size : 25px;
+}
+a:hover{
+    background-color : yellow;
 }
 
 `;
 
 
-export default Plag ;
+export default Plag;
