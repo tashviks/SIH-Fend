@@ -72,10 +72,6 @@ export default function Register() {
             toast.error(data.msg, toastOptions);
           }
           if (data.status === true) {
-            localStorage.setItem(
-              "loginCredentials",
-              JSON.stringify(data.user)
-            );
             navigate("/");
           }
         }

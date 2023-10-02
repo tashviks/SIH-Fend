@@ -88,19 +88,19 @@ function Plag() {
                     name="message"
                     onChange={handleChange}
                 />
-                <button className='button' onClick={handleClick}>CLick Me</button>
+                <button className='button' onClick={handleClick}>Find Plag</button>
                 <div className="con">
                         <div className='card'>
-                            <div className='result'>AI Percentage : </div><div id="output"></div>
+                            <div className='result'>AI Percentage :</div><div id="output"></div>
                         </div>
 
-                        <div className="card">
-                            <div className='result'>Plag Percentage : </div><div id="output-1"></div>
+                        <div className="card-1">
+                            <div className='result'>Plag Percentage :</div><div id="output-1"></div>
                         </div>
                    
 
-                    <div className="card">
-                        <div className='result'>Plag Resources : </div><div id="output-2"></div>
+                    <div className="card-2">
+                        <div className='result'>Plag Resources :</div><div id="output-2"></div>
                     </div>
                 </div>
                 <div></div>
@@ -128,15 +128,15 @@ textarea
 align-items:top;
 padding-left: 10px;
 padding-right : 10px;
-width : 1000px;
-max-width : 1500px;
+width : 100%;
+max-width : 1000px;
 height : 500px;
 position : relative;
 word-break : break-all;
 font-size : 35px;
 border : 1px solid black;
 border-radius : 25px;
-box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+box-shadow: 0 8px 16px 0 rgba(0,0,0,0.5);
 }
 
 textarea:active{
@@ -145,14 +145,18 @@ textarea:active{
 }
 
 button{
-    width : 150px;
-    height : 50px;
-    transition: all ease 2s;
+    width : 200px;
+    height : 75px;
+    transition: all ease 0.5s;
+    border-radius : 25px;
+    font-weight : bold;
 }
 
-button::hover{
-    background-color : red;
-    scale : 1.5;
+button:hover{
+    cursor : pointer;
+    scale : 1.2;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,1);
+    color : red;
 }
 
 ::placeholder{
@@ -167,14 +171,14 @@ button::hover{
    font-weight : bold;
 }
 div#output{
-    font-size : 100px;
+    font-size : 70px;
     color : red;
-    padding-left : 40%;
+    padding-left : 0%;
 }
 div#output-1{
-    font-size : 100px;
+    font-size : 70px;
     color : red;
-    padding-left : 40%;
+    padding-left : 30%;
 }
 #output-2{
     overflow : scroll;
@@ -189,7 +193,8 @@ div#output-1{
     padding : 10px;
     box-shadow : 0 4px 8px 0 rgba(0 , 0 , 0 , 0.2);
     transition : 0.5s;
-    width : 300px;
+    width : 120%;
+    max-width : 400px;
     height : 250px;
     display : flex;
     flex-direction : column;
@@ -198,10 +203,45 @@ div#output-1{
     box-shadow: 0 8px 16px 0 rgba(0,0,0,1);
     scale:1.1;
 }
+.card-1{
+    background-color : #fff;
+    padding : 10px;
+    box-shadow : 0 4px 8px 0 rgba(0 , 0 , 0 , 0.2);
+    transition : 0.5s;
+    width : 120%;
+    max-width : 400px;
+    height : 250px;
+    display : flex;
+    flex-direction : column;
+}
+.card-1:hover{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,1);
+    scale:1.1;
+}
+.card-2{
+    background-color : #fff;
+    padding : 10px;
+    box-shadow : 0 4px 8px 0 rgba(0 , 0 , 0 , 0.2);
+    transition : 0.5s;
+    width : 120%;
+    max-width : 400px;
+    height : 250px;
+    display : flex;
+    flex-direction : column;
+}
+.card-2:hover{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,1);
+    scale:1.1;
+}
+
+
 
 .con{
     display:flex;
     gap : 2rem;
+    width : 100%;
+    max-width : 2000px;
+    padding-left : 20%;
 }
 
 a{
@@ -211,6 +251,7 @@ a{
 a:hover{
     background-color : yellow;
 }
+
 
 `;
 
