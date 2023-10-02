@@ -45,7 +45,7 @@ const DropDownProfile = ()=>{
               <DropdownItem img = {add} text = {"Add Project"} route={"/addproject"}/>
               <DropdownItem img = {settings} text = {"Settings"}route={"/"}/>
               <DropdownItem img = {question} text = {"Helps"} route={"/"}/>
-              <DropdownItem img = {logout} text = {"Logout"} route={"/"}/>
+              <DropdownItem img = {logout} text = {"Logout"} route={"/"} onClick={()=> {localStorage.removeItem("loginCredentials")}} />
             </ul>
           </div>
         </div>
@@ -55,7 +55,7 @@ const DropDownProfile = ()=>{
   
   function DropdownItem(props){
     return(
-      <li className = 'dropdownItem'>
+      <li className = 'dropdownItem' onClick={props.onClick}>
         <img src={props.img} alt=''></img>
         <a href={props.route}> {props.text} </a>
       </li>
